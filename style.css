@@ -13,9 +13,9 @@ body {
   overflow: hidden;
 }
 
-/* ==================== SIDEBAR BÊN TRÁI RỘNG RÃI ==================== */
+/* ==================== SIDEBAR BÊN TRÁI ==================== */
 .sidebar {
-  width: 320px;
+  width: 350px;
   background-color: #ffffff;
   display: flex;
   flex-direction: column;
@@ -23,7 +23,7 @@ body {
   z-index: 10;
 }
 
-/* Header Logo Sidebar - HIỆU ỨNG MÀU NỀN NGỌC TRAI XÀ CỪ */
+/* Header Logo Sidebar */
 .sidebar-header {
   background: linear-gradient(135deg, #ffffff 0%, #fcf9f8 40%, #eef2f6 100%);
   color: #0f4c5c; /* Màu xanh ngọc đậm sang trọng */
@@ -41,9 +41,9 @@ body {
   z-index: 10;
 }
 
-/* Ảnh Logo Công ty nằm trên thanh Ngọc Trai */
+/* Ảnh Logo Công ty  */
 .header-logo {
-  height: 40px;
+  height: 80px;
   width: auto;
   object-fit: contain;
   filter: drop-shadow(0px 3px 4px rgba(0, 0, 0, 0.25));
@@ -62,16 +62,17 @@ body {
   gap: 15px;
 }
 
+/* ==================== KHUNG ẢNH AVATAR NGƯỜI DÙNG ==================== */
+/* ==================== KHUNG ẢNH AVATAR (HÌNH VUÔNG HIỆN ĐẠI) ==================== */
 .avatar {
-  width: 55px;
-  height: 55px;
-  background: #fed7aa;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 30px;
-  color: #ea580c;
+    width: 80px !important;               /* Chiều rộng chuẩn */
+    height: 80px !important;              /* Chiều cao chuẩn */
+    border-radius: 12px !important;       /* Bo góc nhẹ hiện đại (Thay vì 50% hình tròn) */
+    object-fit: contain !important;       /* Giúp hiển thị trọn vẹn icon không bị cắt xén */
+    border: none !important;              /* Xóa viền màu xung quanh */
+    box-shadow: 0 2px 6px rgba(0,0,0,0.08);/* Đổ bóng 3D nhẹ làm nổi bật icon */
+    flex-shrink: 0;                       
+    background-color: transparent;        /* Nền trong suốt tự nhiên */
 }
 
 .user-name {
@@ -137,6 +138,13 @@ body {
   background-color: #8e43e7;
   color: white;
   box-shadow: 0 4px 10px rgba(142, 67, 231, 0.3);
+}
+
+/* Màu nền Cam rực rỡ cho CHƯƠNG TRÌNH KHU VỰC 2 */
+.nav-item.area2 {
+    background-color: #ea580c;
+    color: white;
+    box-shadow: 0 4px 10px rgba(234, 88, 12, 0.3);
 }
 
 .nav-item:hover {
@@ -222,7 +230,7 @@ body {
 
 .topbar {
   background-color: #1473e6;
-  height: 60px;
+  height: 80px;
   padding: 0 25px;
   display: flex;
   align-items: center;

@@ -13,15 +13,17 @@
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
+    <!-- ==================== SIDEBAR BÊN TRÁI ==================== -->
     <aside class="sidebar">
       <div class="sidebar-header">
         <img src="image/CTY.png" alt="Logo" class="header-logo" />
         <span>GIÁO DỤC SÀI GÒN</span>
       </div>
 
+      <!-- THÔNG TIN NGƯỜI DÙNG -->
       <div class="user-card">
-        <div class="avatar">👦</div>
-        <div class="user-name">Tên người dùng</div>
+        <img src="image/Taikhoan.png" alt="Avatar" class="avatar" />
+        <div class="user-name">Tài khoản</div>
       </div>
 
       <div class="nav-menu">
@@ -32,6 +34,7 @@
 
         <div class="section-title">Môn học của bạn</div>
 
+        <!-- NHÓM MENU 1: STEM -->
         <div class="dropdown-group">
           <div class="nav-item stem" onclick="toggleDropdown(this)">
             <i class="fa-solid fa-gear"></i>
@@ -47,6 +50,7 @@
           </div>
         </div>
 
+        <!-- NHÓM MENU 2: KỸ NĂNG SỐNG -->
         <div class="dropdown-group">
           <div class="nav-item life-skills" onclick="toggleDropdown(this)">
             <i class="fa-solid fa-heart"></i>
@@ -62,6 +66,7 @@
           </div>
         </div>
 
+        <!-- NHÓM MENU 3: CÔNG DÂN SỐ -->
         <div class="dropdown-group">
           <div class="nav-item digital" onclick="toggleDropdown(this)">
             <i class="fa-solid fa-globe"></i>
@@ -76,8 +81,26 @@
             <a href="#" class="sub-item">💜 Lớp 5</a>
           </div>
         </div>
-      </div>
 
+        <!-- NHÓM MENU 4: CHƯƠNG TRÌNH KHU VỰC 2 -->
+        <div class="dropdown-group">
+          <div class="nav-item area2" onclick="toggleDropdown(this)">
+            <i class="fa-solid fa-map-location-dot"></i>
+            <span class="nav-text">ROBOTIC TỔNG THỂ</span>
+            <i class="fa-solid fa-chevron-down arrow"></i>
+          </div>
+          <div class="submenu">
+            <a href="#" class="sub-item">⭐ Lớp 1</a>
+            <a href="#" class="sub-item">⭐ Lớp 2</a>
+            <a href="#" class="sub-item">⭐ Lớp 3</a>
+            <a href="#" class="sub-item">⭐ Lớp 4</a>
+            <a href="#" class="sub-item">⭐ Lớp 5</a>
+          </div>
+        </div>
+      </div>
+      <!-- KẾT THÚC KHỐI NAV-MENU CHÍNH -->
+
+      <!-- PHẦN DƯỚI CÙNG SIDEBAR -->
       <div class="sidebar-footer">
         <button class="btn-settings">
           <i class="fa-solid fa-gear"></i>
@@ -86,6 +109,7 @@
       </div>
     </aside>
 
+    <!-- ==================== KHU VỰC NỘI DUNG CHÍNH BÊN PHẢI ==================== -->
     <main class="main-content">
       <header class="topbar">
         <div class="search-container">
@@ -114,6 +138,7 @@
         </div>
       </header>
 
+      <!-- LƯỚI BÀI HỌC GIÁO ÁN -->
       <div class="content-grid">
         <div class="course-card">
           <div class="card-thumbnail">
@@ -381,8 +406,9 @@
       </div>
     </main>
 
+    <!-- ==================== SCRIPT ĐIỀU KHIỂN ==================== -->
     <script>
-      // Hàm đóng/mở danh sách menu con bên trái (Khối 1 -> Khối 5)
+      // Hàm đóng/mở danh sách menu con bên trái (Lớp 1 -> Lớp 5)
       function toggleDropdown(element) {
         element.classList.toggle("active");
         let submenu = element.nextElementSibling;
@@ -395,19 +421,13 @@
 
       // Hàm xử lý tương tác nhấp chuột giả lập tải giáo án mượt mà
       function downloadLesson(buttonElement) {
-        // Biến nút bấm thành vòng xoay loading trắng sắc nét
         buttonElement.innerHTML =
           '<i class="fa-solid fa-spinner fa-spin" style="font-size: 45px; color: white; filter: drop-shadow(0 2px 5px rgba(0,0,0,0.4));"></i>';
-        buttonElement.style.pointerEvents = "none"; // Khóa không cho bấm liên tiếp
+        buttonElement.style.pointerEvents = "none";
 
-        // Tải xong sau đúng 1 giây
         setTimeout(() => {
           let cardThumbnail = buttonElement.closest(".card-thumbnail");
-
-          // Ẩn vùng chứa nút tải dow.png đi
           cardThumbnail.querySelector(".state-download").style.display = "none";
-
-          // Kích hoạt hiển thị đồng thời cả 2 icon PPT & KHBD khổng lồ
           cardThumbnail.querySelector(".state-ready").style.display = "flex";
         }, 1000);
       }
