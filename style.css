@@ -1,443 +1,437 @@
 /* ==================== RESET CSS CHUẨN CƠ BẢN ==================== */
 * {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 body {
-  background-color: #f0f2f5;
-  display: flex;
-  height: 100vh;
-  overflow: hidden;
+    background-color: #f0f2f5;
+    display: flex;
+    height: 100vh;
+    overflow: hidden;
 }
 
-/* ==================== SIDEBAR BÊN TRÁI ==================== */
+/* ==================== SIDEBAR BÊN TRÁI RỘNG RÃI ==================== */
 .sidebar {
-  width: 350px;
-  background-color: #ffffff;
-  display: flex;
-  flex-direction: column;
-  border-right: 1px solid #e5e7eb;
-  z-index: 10;
+    width: 320px;
+    background-color: #ffffff;
+    display: flex;
+    flex-direction: column;
+    border-right: 1px solid #e5e7eb;
+    z-index: 10;
 }
 
-/* Header Logo Sidebar */
+/* Hiệu ứng màu nền Ngọc Trai Xà Cừ thanh lịch */
 .sidebar-header {
-  background: linear-gradient(135deg, #ffffff 0%, #fcf9f8 40%, #eef2f6 100%);
-  color: #0f4c5c; /* Màu xanh ngọc đậm sang trọng */
-  padding: 14px 18px;
-  font-size: 20px;
-  font-weight: 700;
-  letter-spacing: 0.5px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 12px;
-  box-shadow: 0 4px 15px rgba(180, 185, 195, 0.35);
-  border-bottom: 1px solid #e2e8f0;
-  position: relative;
-  z-index: 10;
+    background: linear-gradient(135deg, #ffffff 0%, #fcf9f8 40%, #eef2f6 100%);
+    color: #0f4c5c;
+    padding: 14px 18px;
+    font-size: 20px;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    box-shadow: 0 4px 15px rgba(180, 185, 195, 0.35);
+    border-bottom: 1px solid #e2e8f0;
+    position: relative;
+    z-index: 10;
 }
 
-/* Ảnh Logo Công ty  */
 .header-logo {
-  height: 80px;
-  width: auto;
-  object-fit: contain;
-  filter: drop-shadow(0px 3px 4px rgba(0, 0, 0, 0.25));
+    height: 40px;
+    width: auto;
+    object-fit: contain;
+    filter: drop-shadow(0px 3px 4px rgba(0, 0, 0, 0.25));
 }
 
-/* Thẻ thông tin người dùng */
+/* Khung hiển thị thông tin tài khoản */
 .user-card {
-  margin: 22px 18px;
-  padding: 16px 18px;
-  background: #ffffff;
-  border: 1px solid #e2e8f0;
-  border-radius: 16px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.06);
-  display: flex;
-  align-items: center;
-  gap: 15px;
+    margin: 22px 18px;
+    padding: 16px 18px;
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 16px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.06);
+    display: flex;
+    align-items: center;
+    gap: 15px;
 }
 
-/* ==================== KHUNG ẢNH AVATAR NGƯỜI DÙNG ==================== */
-/* ==================== KHUNG ẢNH AVATAR (HÌNH VUÔNG HIỆN ĐẠI) ==================== */
+/* KHUNG ẢNH AVATAR VUÔNG BO GÓC HIỆN ĐẠI */
 .avatar {
-    width: 80px !important;               /* Chiều rộng chuẩn */
-    height: 80px !important;              /* Chiều cao chuẩn */
-    border-radius: 12px !important;       /* Bo góc nhẹ hiện đại (Thay vì 50% hình tròn) */
-    object-fit: contain !important;       /* Giúp hiển thị trọn vẹn icon không bị cắt xén */
-    border: none !important;              /* Xóa viền màu xung quanh */
-    box-shadow: 0 2px 6px rgba(0,0,0,0.08);/* Đổ bóng 3D nhẹ làm nổi bật icon */
+    width: 55px !important;               
+    height: 55px !important;              
+    border-radius: 12px !important; /* Bo góc vuông nhẹ mềm mại */
+    object-fit: contain !important;       
+    border: none !important;              
+    box-shadow: 0 2px 6px rgba(0,0,0,0.08);
     flex-shrink: 0;                       
-    background-color: transparent;        /* Nền trong suốt tự nhiên */
+    background-color: transparent;        
 }
 
 .user-name {
-  font-weight: 700;
-  color: #334155;
-  font-size: 18px;
+    font-weight: 700;
+    color: #334155;
+    font-size: 18px;
 }
 
-/* Danh sách menu điều hướng lớn */
+/* Menu điều hướng chính phía dưới */
 .nav-menu {
-  flex: 1;
-  padding: 0 18px;
-  display: flex;
-  flex-direction: column;
-  gap: 16px;
-  overflow-y: auto;
+    flex: 1;
+    padding: 0 18px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    overflow-y: auto;
 }
 
 .nav-item {
-  display: flex;
-  align-items: center;
-  gap: 16px;
-  padding: 16px 22px;
-  border-radius: 35px;
-  font-weight: 700;
-  font-size: 16px;
-  cursor: pointer;
-  transition: all 0.2s ease;
-  text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    padding: 16px 22px;
+    border-radius: 35px;
+    font-weight: 700;
+    font-size: 16px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    text-decoration: none;
 }
 
 .nav-item i {
-  font-size: 20px;
+    font-size: 20px;
 }
 
 .nav-item.home {
-  background-color: #e8f0fe;
-  color: #1a73e8;
+    background-color: #e8f0fe;
+    color: #1a73e8;
 }
 
 .section-title {
-  margin-top: 14px;
-  margin-bottom: 4px;
-  font-size: 18px;
-  font-weight: 800;
-  color: #1e293b;
-  padding-left: 8px;
+    margin-top: 14px;
+    margin-bottom: 4px;
+    font-size: 18px;
+    font-weight: 800;
+    color: #1e293b;
+    padding-left: 8px;
 }
 
+/* MÀU SẮC ĐỒNG BỘ CÁC THỂ MÔN HỌC */
 .nav-item.stem {
-  background-color: #1473e6;
-  color: white;
-  box-shadow: 0 4px 10px rgba(20, 115, 230, 0.3);
+    background-color: #1473e6;
+    color: white;
+    box-shadow: 0 4px 10px rgba(20, 115, 230, 0.3);
 }
 
 .nav-item.life-skills {
-  background-color: #1c9e53;
-  color: white;
-  box-shadow: 0 4px 10px rgba(28, 158, 83, 0.3);
+    background-color: #1c9e53;
+    color: white;
+    box-shadow: 0 4px 10px rgba(28, 158, 83, 0.3);
 }
 
 .nav-item.digital {
-  background-color: #8e43e7;
-  color: white;
-  box-shadow: 0 4px 10px rgba(142, 67, 231, 0.3);
+    background-color: #8e43e7;
+    color: white;
+    box-shadow: 0 4px 10px rgba(142, 67, 231, 0.3);
 }
 
-/* Màu nền Cam rực rỡ cho CHƯƠNG TRÌNH KHU VỰC 2 */
 .nav-item.area2 {
-    background-color: #ea580c;
+    background-color: #ea580c; /* Màu cam thương hiệu nổi bật */
     color: white;
     box-shadow: 0 4px 10px rgba(234, 88, 12, 0.3);
 }
 
 .nav-item:hover {
-  opacity: 0.95;
-  transform: translateY(-1px);
+    opacity: 0.95;
+    transform: translateY(-1px);
 }
 
-/* ==================== HIỆU ỨNG THẢ XUỐNG MENU CON (DROPDOWN) ==================== */
 .nav-text {
-  flex: 1;
+    flex: 1;
 }
 
 .arrow {
-  font-size: 14px !important;
-  transition: transform 0.3s ease;
+    font-size: 14px !important;
+    transition: transform 0.3s ease;
 }
 
 .nav-item.active .arrow {
-  transform: rotate(180deg); /* Xoay mũi tên lên trên khi mở menu */
+    transform: rotate(180deg);
 }
 
 .submenu {
-  max-height: 0;
-  overflow: hidden;
-  transition: max-height 0.35s ease-in-out;
-  display: flex;
-  flex-direction: column;
-  gap: 6px;
-  padding-left: 20px;
-  padding-right: 5px;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.35s ease-in-out;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    padding-left: 20px;
+    padding-right: 5px;
 }
 
 .submenu.open {
-  max-height: 300px;
-  margin-top: 8px;
-  margin-bottom: 8px;
+    max-height: 300px;
+    margin-top: 8px;
+    margin-bottom: 8px;
 }
 
 .sub-item {
-  padding: 10px 20px;
-  background-color: #f8fafc;
-  border: 1px solid #e2e8f0;
-  color: #475569;
-  text-decoration: none;
-  font-weight: 600;
-  font-size: 15px;
-  border-radius: 20px;
-  transition: all 0.2s ease;
-  display: flex;
-  align-items: center;
-  gap: 10px;
+    padding: 10px 20px;
+    background-color: #f8fafc;
+    border: 1px solid #e2e8f0;
+    color: #475569;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 15px;
+    border-radius: 20px;
+    transition: all 0.2s ease;
+    display: flex;
+    align-items: center;
+    gap: 10px;
 }
 
 .sub-item:hover {
-  background-color: #e2e8f0;
-  color: #1e293b;
-  transform: translateX(6px);
+    background-color: #e2e8f0;
+    color: #1e293b;
+    transform: translateX(6px);
 }
 
 .sidebar-footer {
-  padding: 20px;
+    padding: 20px;
 }
 
 .btn-settings {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  color: #64748b;
-  font-weight: 600;
-  cursor: pointer;
-  font-size: 15px;
-  background: none;
-  border: none;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: #64748b;
+    font-weight: 600;
+    cursor: pointer;
+    font-size: 15px;
+    background: none;
+    border: none;
 }
 
 /* ==================== KHU VỰC CHÍNH BÊN PHẢI ==================== */
 .main-content {
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  background-color: #f8fafc;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    background-color: #f8fafc;
 }
 
 .topbar {
-  background-color: #1473e6;
-  height: 80px;
-  padding: 0 25px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
+    background-color: #1473e6;
+    height: 60px;
+    padding: 0 25px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 }
 
 .search-container {
-  position: relative;
-  width: 350px;
+    position: relative;
+    width: 350px;
 }
 
 .search-container i {
-  position: absolute;
-  left: 15px;
-  top: 50%;
-  transform: translateY(-50%);
-  color: #94a3b8;
+    position: absolute;
+    left: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #94a3b8;
 }
 
 .search-input {
-  width: 100%;
-  padding: 10px 15px 10px 40px;
-  border-radius: 20px;
-  border: none;
-  outline: none;
-  font-size: 14px;
+    width: 100%;
+    padding: 10px 15px 10px 40px;
+    border-radius: 20px;
+    border: none;
+    outline: none;
+    font-size: 14px;
 }
 
 .pagination {
-  display: flex;
-  align-items: center;
-  background: #ffffff;
-  border-radius: 6px;
-  padding: 4px;
-  gap: 4px;
+    display: flex;
+    align-items: center;
+    background: #ffffff;
+    border-radius: 6px;
+    padding: 4px;
+    gap: 4px;
 }
 
 .page-btn {
-  background: #f1f5f9;
-  border: 1px solid #cbd5e1;
-  padding: 4px 10px;
-  border-radius: 4px;
-  cursor: pointer;
-  color: #334155;
+    background: #f1f5f9;
+    border: 1px solid #cbd5e1;
+    padding: 4px 10px;
+    border-radius: 4px;
+    cursor: pointer;
+    color: #334155;
 }
 
 .page-btn:hover {
-  background: #e2e8f0;
+    background: #e2e8f0;
 }
 
 .page-info {
-  padding: 0 15px;
-  font-weight: 600;
-  font-size: 14px;
-  color: #334155;
+    padding: 0 15px;
+    font-weight: 600;
+    font-size: 14px;
+    color: #334155;
 }
 
 /* ==================== LƯỚI KHÓA HỌC & THẺ BÀI HỌC GIÁO ÁN ==================== */
 .content-grid {
-  flex: 1;
-  padding: 25px;
-  overflow-y: auto;
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 25px;
-  align-content: start;
+    flex: 1;
+    padding: 25px;
+    overflow-y: auto;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+    align-content: start;
 }
 
 .course-card {
-  background: #ffffff;
-  border-radius: 18px;
-  padding: 12px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
-  border: 1px solid #e2e8f0;
-  transition: all 0.25s ease;
+    background: #ffffff;
+    border-radius: 18px;
+    padding: 14px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+    border: 1px solid #e2e8f0;
+    transition: all 0.25s ease;
 }
 
 .course-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.12);
-  border-color: #cbd5e1;
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.12);
+    border-color: #cbd5e1;
 }
 
+/* KHUNG NỀN XANH NGỌC: Đã tăng chiều cao lên 215px chứa nút khổng lồ siêu thoáng */
 .card-thumbnail {
-  width: 100%;
-  height: 190px;
-  background: linear-gradient(
-    135deg,
-    #0ba3b5,
-    #087f8d
-  ); /* Nền xanh ngọc bích */
-  border-radius: 12px;
-  position: relative;
-  padding: 15px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: space-between;
-  overflow: hidden;
+    width: 100%;
+    height: 215px !important; 
+    background: linear-gradient(135deg, #0ba3b5, #087f8d);
+    border-radius: 14px;
+    position: relative;
+    padding: 14px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    overflow: hidden;
 }
 
 .card-title-overlay {
-  color: white;
-  font-weight: 700;
-  font-size: 13px;
-  text-align: center;
-  line-height: 1.4;
-  text-transform: uppercase;
-  z-index: 2;
+    width: 100%;
+    color: white;
+    font-weight: 700;
+    font-size: 13px;
+    text-align: center;
+    line-height: 1.4;
+    text-transform: uppercase;
+    z-index: 2;
 }
 
 .card-illustration {
-  font-size: 55px;
-  color: rgba(255, 255, 255, 0.9);
-  filter: drop-shadow(0 4px 6px rgba(0, 0, 0, 0.2));
-  margin-bottom: 10px;
+    font-size: 55px;
+    color: rgba(255, 255, 255, 0.95);
+    filter: drop-shadow(0 4px 6px rgba(0,0,0,0.25));
+    margin-top: 10px; 
 }
 
+/* CHÚ THÍCH DÒNG CHỮ CHỦ ĐỀ NẰM DƯỚI NỀN XANH */
 .card-caption {
-  margin-top: 14px;
-  margin-bottom: 4px;
-  font-size: 12px;
-  font-weight: 700;
-  color: #334155;
-  text-align: center;
-  text-transform: uppercase;
-  line-height: 1.4;
+    margin-top: 14px;
+    margin-bottom: 4px;
+    font-size: 13px;
+    font-weight: 700;
+    color: #1e293b;
+    text-align: center;
+    text-transform: uppercase;
+    line-height: 1.4;
+    min-height: 36px;
 }
 
-/* ==================== KHU VỰC CÁC NÚT BẤM ICON KHỔNG LỒ ==================== */
-.card-actions {
-  position: absolute;
-  bottom: 6px; /* Đẩy icon hạ sát đáy để nhường không gian cho ảnh minh họa ở giữa */
-  left: 10px;
-  right: 10px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  z-index: 5;
-}
-
-/* Khung chứa Icon Tải giáo án ban đầu */
+/* ==================== VỊ TRÍ 1: NÚT TẢI XUỐNG (TRONG NỀN XANH) ==================== */
 .state-download {
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+    position: absolute;
+    bottom: 8px; /* Đặt lơ lửng sát đáy bên trong nền xanh ngọc */
+    left: 0;
+    right: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 5;
 }
 
-/* Khung chứa 2 Icon PPT & KHBD sau khi tải xong */
+/* ==================== VỊ TRÍ 2: NÚT START VÀ KHBD (DƯỚI NỀN TRẮNG) ==================== */
 .state-ready {
-  width: 100%;
-  display: none; /* Mặc định ban đầu ẩn đi */
-  justify-content: center;
-  align-items: center;
-  gap: 30px; /* Khoảng cách rộng rãi giữa 2 icon khổng lồ */
+    width: 100%;
+    display: none; /* Mặc định ẩn, bấm tải xong mới hiện */
+    justify-content: center;
+    align-items: center;
+    gap: 40px; /* Độ giãn rộng rãi giữa 2 nút */
+    padding-top: 10px;
+    margin-top: 6px;
+    border-top: 1px dashed #cbd5e1; /* Đường phân cách mờ tinh tế */
 }
 
-/* ĐỊNH DẠNG CHUNG: BIẾN NÚT THÀNH TRONG SUỐT, CHỈ GIỮ LẠI ĐÚNG HÌNH ICON */
-.btn-download,
-.btn-ppt,
-.btn-khbd {
-  background: transparent !important; /* Xóa sạch khung viền màu nền cũ */
-  border: none !important;
-  box-shadow: none !important;
-  cursor: pointer;
-  display: flex !important;
-  align-items: center !important;
-  justify-content: center !important;
-  padding: 0 !important;
-  /* Hiệu ứng nảy lò xo 3D khi di chuột cực sinh động */
-  transition: all 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+/* BIẾN CÁC NÚT BẤM THÀNH TRONG SUỐT HOÀN TOÀN, CHỈ LỘ ICON 3D */
+.btn-download, .btn-ppt, .btn-khbd {
+    background: transparent !important; 
+    border: none !important;
+    box-shadow: none !important; 
+    cursor: pointer;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    padding: 0 !important;
+    /* Hiệu ứng nảy lò xo 3D đàn hồi khi rẽ chuột vào */
+    transition: all 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275); 
 }
 
-/* Hiệu ứng nảy phóng to khi người dùng rẽ chuột vào icon */
-.btn-download:hover,
-.btn-ppt:hover,
-.btn-khbd:hover {
-  transform: scale(1.18); /* Icon tự động nảy to ra 18% */
+/* Nảy phóng to ra 18% khi di chuột vào */
+.btn-download:hover, .btn-ppt:hover, .btn-khbd:hover { transform: scale(1.18); }
+/* Hơi lõm xuống khi click bấm chuột */
+.btn-download:active, .btn-ppt:active, .btn-khbd:active { transform: scale(0.92); }
+
+/* KHÓA KÍCH THƯỚC ICON TẢI XUỐNG TRÊN NỀN XANH (Phóng to lên hẳn 80px) */
+.btn-img-icon-top {
+    width: 100px !important;  
+    height: 100px !important;
+    max-width: 100px !important;
+    max-height: 100px !important;
+    object-fit: contain !important;
+    display: inline-block !important;
+    flex-shrink: 0 !important;
+    /* Đổ bóng khối 3D sâu hơn bám chắc trên nền xanh ngọc */
+    filter: drop-shadow(0 8px 12px rgba(0, 0, 0, 0.5)); 
 }
 
-/* Hiệu ứng lõm nhẹ xuống khi người dùng nhấn nhấp chuột */
-.btn-download:active,
-.btn-ppt:active,
-.btn-khbd:active {
-  transform: scale(0.92);
+/* KHÓA KÍCH THƯỚC ICON MỞ BÀI DƯỚI NỀN TRẮNG (Phóng to lên hẳn 75px) */
+.btn-img-icon-bottom {
+    width: 100px !important;  
+    height: 100px !important;
+    max-width: 100px !important;
+    max-height: 100px !important;
+    object-fit: contain !important;
+    display: inline-block !important;
+    flex-shrink: 0 !important;
+    /* Đổ bóng nhẹ nhàng, lơ lửng trên tấm nền trắng */
+    filter: drop-shadow(0 5px 8px rgba(0, 0, 0, 0.25)); 
 }
 
-/*  KÍCH THƯỚC ICON */
-.btn-img-icon {
-  width: 150px !important;
-  height: 150px !important;
-  max-width: 150px !important;
-  max-height: 150px !important;
-  object-fit: contain !important;
-  display: inline-block !important;
-  flex-shrink: 0 !important;
-  /* Đổ bóng khối 3D đậm đà, tách biệt hình icon hoàn toàn khỏi nền xanh ngọc */
-  filter: drop-shadow(0 6px 8px rgba(0, 0, 0, 0.5));
-}
-
-/* Tự động co giãn lưới bài học khi mở trên màn hình ipad/máy tính nhỏ */
+/* Tự động co giãn cấu trúc lưới khi chạy trên màn hình nhỏ/iPad */
 @media (max-width: 1100px) {
-  .content-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
+    .content-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
 }
