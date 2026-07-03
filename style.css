@@ -418,10 +418,10 @@ body {
 
 /* KHÓA KÍCH THƯỚC ICON MỞ BÀI DƯỚI NỀN TRẮNG (Phóng to lên hẳn 75px) */
 .btn-img-icon-bottom {
-    width: 100px !important;  
-    height: 100px !important;
-    max-width: 100px !important;
-    max-height: 100px !important;
+    width: 130px !important;  
+    height:130px !important;
+    max-width: 130px !important;
+    max-height: 130px !important;
     object-fit: contain !important;
     display: inline-block !important;
     flex-shrink: 0 !important;
