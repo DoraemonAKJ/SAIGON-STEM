@@ -1,0 +1,416 @@
+<!doctype html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SAIGON STEM - Quản Lý Giáo Án</title>
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <aside class="sidebar">
+      <div class="sidebar-header">
+        <img src="image/CTY.png" alt="Logo" class="header-logo" />
+        <span>SAIGON STEM</span>
+      </div>
+
+      <div class="user-card">
+        <div class="avatar">👦</div>
+        <div class="user-name">Tên người dùng</div>
+      </div>
+
+      <div class="nav-menu">
+        <a href="#" class="nav-item home">
+          <i class="fa-solid fa-house"></i>
+          <span>Trang Chủ</span>
+        </a>
+
+        <div class="section-title">Môn học của bạn</div>
+
+        <div class="dropdown-group">
+          <div class="nav-item stem" onclick="toggleDropdown(this)">
+            <i class="fa-solid fa-gear"></i>
+            <span class="nav-text">S.T.E.M</span>
+            <i class="fa-solid fa-chevron-down arrow"></i>
+          </div>
+          <div class="submenu">
+            <a href="#" class="sub-item">📘 Lớp 1</a>
+            <a href="#" class="sub-item">📘 Lớp 2</a>
+            <a href="#" class="sub-item">📘 Lớp 3</a>
+            <a href="#" class="sub-item">📘 Lớp 4</a>
+            <a href="#" class="sub-item">📘 Lớp 5</a>
+          </div>
+        </div>
+
+        <div class="dropdown-group">
+          <div class="nav-item life-skills" onclick="toggleDropdown(this)">
+            <i class="fa-solid fa-heart"></i>
+            <span class="nav-text">KỸ NĂNG SỐNG</span>
+            <i class="fa-solid fa-chevron-down arrow"></i>
+          </div>
+          <div class="submenu">
+            <a href="#" class="sub-item">💚 Lớp 1</a>
+            <a href="#" class="sub-item">💚 Lớp 2</a>
+            <a href="#" class="sub-item">💚 Lớp 3</a>
+            <a href="#" class="sub-item">💚 Lớp 4</a>
+            <a href="#" class="sub-item">💚 Lớp 5</a>
+          </div>
+        </div>
+
+        <div class="dropdown-group">
+          <div class="nav-item digital" onclick="toggleDropdown(this)">
+            <i class="fa-solid fa-globe"></i>
+            <span class="nav-text">CÔNG DÂN SỐ</span>
+            <i class="fa-solid fa-chevron-down arrow"></i>
+          </div>
+          <div class="submenu">
+            <a href="#" class="sub-item">💜 Lớp 1</a>
+            <a href="#" class="sub-item">💜 Lớp 2</a>
+            <a href="#" class="sub-item">💜 Lớp 3</a>
+            <a href="#" class="sub-item">💜 Lớp 4</a>
+            <a href="#" class="sub-item">💜 Lớp 5</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="sidebar-footer">
+        <button class="btn-settings">
+          <i class="fa-solid fa-gear"></i>
+          <span>Cài đặt</span>
+        </button>
+      </div>
+    </aside>
+
+    <main class="main-content">
+      <header class="topbar">
+        <div class="search-container">
+          <i class="fa-solid fa-magnifying-glass"></i>
+          <input
+            type="text"
+            class="search-input"
+            placeholder="Tìm kiếm bài học..."
+          />
+        </div>
+
+        <div class="pagination">
+          <button class="page-btn">
+            <i class="fa-solid fa-backward-step"></i>
+          </button>
+          <button class="page-btn">
+            <i class="fa-solid fa-caret-left"></i>
+          </button>
+          <span class="page-info">1 / 15</span>
+          <button class="page-btn">
+            <i class="fa-solid fa-caret-right"></i>
+          </button>
+          <button class="page-btn">
+            <i class="fa-solid fa-forward-step"></i>
+          </button>
+        </div>
+      </header>
+
+      <div class="content-grid">
+        <div class="course-card">
+          <div class="card-thumbnail">
+            <div class="card-title-overlay">
+              STEM - LỚP 3 - TIẾT 2<br />CHỦ ĐỀ: QUẠT MÁY MINI
+            </div>
+            <div class="card-illustration">🪓</div>
+
+            <div class="card-actions">
+              <div class="state-download">
+                <button
+                  class="btn-download"
+                  onclick="downloadLesson(this)"
+                  title="Tải giáo án"
+                >
+                  <img src="image/dow.png" alt="Tải về" class="btn-img-icon" />
+                </button>
+              </div>
+              <div class="state-ready">
+                <button
+                  class="btn-ppt"
+                  onclick="alert('Mở PPT Quạt máy mini!')"
+                  title="Chạy PPT"
+                >
+                  <img src="image/start.png" alt="PPT" class="btn-img-icon" />
+                </button>
+                <button
+                  class="btn-khbd"
+                  onclick="alert('Mở KHBD Quạt máy mini...')"
+                  title="Xem KHBD"
+                >
+                  <img
+                    src="image/Tailieu.png"
+                    alt="KHBD"
+                    class="btn-img-icon"
+                  />
+                </button>
+              </div>
+            </div>
+          </div>
+          <div class="card-caption">
+            STEM - LỚP 3 - TIẾT 2 - CHỦ ĐỀ 3: QUẠT MÁY MINI
+          </div>
+        </div>
+
+        <div class="course-card">
+          <div class="card-thumbnail">
+            <div class="card-title-overlay">
+              STEM - LỚP 4 - TIẾT 3<br />CHỦ ĐỀ: MÔ HÌNH HỆ MẶT TRỜI
+            </div>
+            <div class="card-illustration">🪐</div>
+
+            <div class="card-actions">
+              <div class="state-download">
+                <button
+                  class="btn-download"
+                  onclick="downloadLesson(this)"
+                  title="Tải giáo án"
+                >
+                  <img src="image/dow.png" alt="Tải về" class="btn-img-icon" />
+                </button>
+              </div>
+              <div class="state-ready">
+                <button
+                  class="btn-ppt"
+                  onclick="alert('Mở PPT Mô hình Hệ Mặt Trời!')"
+                  title="Chạy PPT"
+                >
+                  <img src="image/start.png" alt="PPT" class="btn-img-icon" />
+                </button>
+                <button
+                  class="btn-khbd"
+                  onclick="alert('Mở KHBD Mô hình Hệ Mặt Trời...')"
+                  title="Xem KHBD"
+                >
+                  <img
+                    src="image/Tailieu.png"
+                    alt="KHBD"
+                    class="btn-img-icon"
+                  />
+                </button>
+              </div>
+            </div>
+          </div>
+          <div class="card-caption">
+            STEM - LỚP 4 - TIẾT 3 - CHỦ ĐỀ: MÔ HÌNH HỆ MẶT TRỜI
+          </div>
+        </div>
+
+        <div class="course-card">
+          <div class="card-thumbnail">
+            <div class="card-title-overlay">
+              STEM - LỚP 5 - TIẾT 1<br />CHỦ ĐỀ: XE CHẠY BẰNG THẾ NĂNG
+            </div>
+            <div class="card-illustration">🏎️</div>
+
+            <div class="card-actions">
+              <div class="state-download">
+                <button
+                  class="btn-download"
+                  onclick="downloadLesson(this)"
+                  title="Tải giáo án"
+                >
+                  <img src="image/dow.png" alt="Tải về" class="btn-img-icon" />
+                </button>
+              </div>
+              <div class="state-ready">
+                <button
+                  class="btn-ppt"
+                  onclick="alert('Mở PPT Xe Chạy Thế Năng!')"
+                  title="Chạy PPT"
+                >
+                  <img src="image/start.png" alt="PPT" class="btn-img-icon" />
+                </button>
+                <button
+                  class="btn-khbd"
+                  onclick="alert('Mở KHBD Xe Chạy Thế Năng...')"
+                  title="Xem KHBD"
+                >
+                  <img
+                    src="image/Tailieu.png"
+                    alt="KHBD"
+                    class="btn-img-icon"
+                  />
+                </button>
+              </div>
+            </div>
+          </div>
+          <div class="card-caption">
+            STEM - LỚP 5 - TIẾT 1 - CHỦ ĐỀ: XE CHẠY BẰNG THẾ NĂNG
+          </div>
+        </div>
+
+        <div class="course-card">
+          <div class="card-thumbnail">
+            <div class="card-title-overlay">
+              STEM - LỚP 2 - TIẾT 4<br />CHỦ ĐỀ: ĐÈN GIAO THÔNG MINI
+            </div>
+            <div class="card-illustration">🚦</div>
+
+            <div class="card-actions">
+              <div class="state-download">
+                <button
+                  class="btn-download"
+                  onclick="downloadLesson(this)"
+                  title="Tải giáo án"
+                >
+                  <img src="image/dow.png" alt="Tải về" class="btn-img-icon" />
+                </button>
+              </div>
+              <div class="state-ready">
+                <button
+                  class="btn-ppt"
+                  onclick="alert('Mở PPT Đèn Giao Thông!')"
+                  title="Chạy PPT"
+                >
+                  <img src="image/start.png" alt="PPT" class="btn-img-icon" />
+                </button>
+                <button
+                  class="btn-khbd"
+                  onclick="alert('Mở KHBD Đèn Giao Thông...')"
+                  title="Xem KHBD"
+                >
+                  <img
+                    src="image/Tailieu.png"
+                    alt="KHBD"
+                    class="btn-img-icon"
+                  />
+                </button>
+              </div>
+            </div>
+          </div>
+          <div class="card-caption">
+            STEM - LỚP 2 - TIẾT 4 - CHỦ ĐỀ: ĐÈN GIAO THÔNG MINI
+          </div>
+        </div>
+
+        <div class="course-card">
+          <div class="card-thumbnail">
+            <div class="card-title-overlay">
+              ROBOTICS - CƠ BẢN<br />LẮP RÁP CÁNH TAY ROBOT
+            </div>
+            <div class="card-illustration">🤖</div>
+
+            <div class="card-actions">
+              <div class="state-download">
+                <button
+                  class="btn-download"
+                  onclick="downloadLesson(this)"
+                  title="Tải giáo án"
+                >
+                  <img src="image/dow.png" alt="Tải về" class="btn-img-icon" />
+                </button>
+              </div>
+              <div class="state-ready">
+                <button
+                  class="btn-ppt"
+                  onclick="alert('Mở PPT Cánh Tay Robot!')"
+                  title="Chạy PPT"
+                >
+                  <img src="image/start.png" alt="PPT" class="btn-img-icon" />
+                </button>
+                <button
+                  class="btn-khbd"
+                  onclick="alert('Mở KHBD Cánh Tay Robot...')"
+                  title="Xem KHBD"
+                >
+                  <img
+                    src="image/Tailieu.png"
+                    alt="KHBD"
+                    class="btn-img-icon"
+                  />
+                </button>
+              </div>
+            </div>
+          </div>
+          <div class="card-caption">
+            ROBOTICS - CƠ BẢN - LẮP RÁP CÁNH TAY ROBOT
+          </div>
+        </div>
+
+        <div class="course-card">
+          <div class="card-thumbnail">
+            <div class="card-title-overlay">
+              STEM - LỚP 1 - TIẾT 2<br />CHỦ ĐỀ: CHONG CHÓNG GIÓ
+            </div>
+            <div class="card-illustration">🪁</div>
+
+            <div class="card-actions">
+              <div class="state-download">
+                <button
+                  class="btn-download"
+                  onclick="downloadLesson(this)"
+                  title="Tải giáo án"
+                >
+                  <img src="image/dow.png" alt="Tải về" class="btn-img-icon" />
+                </button>
+              </div>
+              <div class="state-ready">
+                <button
+                  class="btn-ppt"
+                  onclick="alert('Mở PPT Chong Chóng Gió!')"
+                  title="Chạy PPT"
+                >
+                  <img src="image/start.png" alt="PPT" class="btn-img-icon" />
+                </button>
+                <button
+                  class="btn-khbd"
+                  onclick="alert('Mở KHBD Chong Chóng Gió...')"
+                  title="Xem KHBD"
+                >
+                  <img
+                    src="image/Tailieu.png"
+                    alt="KHBD"
+                    class="btn-img-icon"
+                  />
+                </button>
+              </div>
+            </div>
+          </div>
+          <div class="card-caption">
+            STEM - LỚP 1 - TIẾT 2 - CHỦ ĐỀ: CHONG CHÓNG GIÓ
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <script>
+      // Hàm đóng/mở danh sách menu con bên trái (Khối 1 -> Khối 5)
+      function toggleDropdown(element) {
+        element.classList.toggle("active");
+        let submenu = element.nextElementSibling;
+        if (submenu.classList.contains("open")) {
+          submenu.classList.remove("open");
+        } else {
+          submenu.classList.add("open");
+        }
+      }
+
+      // Hàm xử lý tương tác nhấp chuột giả lập tải giáo án mượt mà
+      function downloadLesson(buttonElement) {
+        // Biến nút bấm thành vòng xoay loading trắng sắc nét
+        buttonElement.innerHTML =
+          '<i class="fa-solid fa-spinner fa-spin" style="font-size: 45px; color: white; filter: drop-shadow(0 2px 5px rgba(0,0,0,0.4));"></i>';
+        buttonElement.style.pointerEvents = "none"; // Khóa không cho bấm liên tiếp
+
+        // Tải xong sau đúng 1 giây
+        setTimeout(() => {
+          let cardThumbnail = buttonElement.closest(".card-thumbnail");
+
+          // Ẩn vùng chứa nút tải dow.png đi
+          cardThumbnail.querySelector(".state-download").style.display = "none";
+
+          // Kích hoạt hiển thị đồng thời cả 2 icon PPT & KHBD khổng lồ
+          cardThumbnail.querySelector(".state-ready").style.display = "flex";
+        }, 1000);
+      }
+    </script>
+  </body>
+</html>
