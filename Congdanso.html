@@ -1,147 +1,109 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="vi">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SAIGON STEM - Quản Lý Giáo Án 2.0</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
 
-    <!-- Font Inter & FontAwesome Icons -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
-      rel="stylesheet"
-    />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
-    />
-
-    <!-- Liên kết CSS -->
-    <link rel="stylesheet" href="style.css" />
-  </head>
-  <body>
-    <!-- ==================== SIDEBAR THU GỌN HIỆN ĐẠI ==================== -->
     <aside class="sidebar" id="sidebar">
-      <div class="sidebar-header">
-        <div class="logo-wrapper">
-          <img
-            src="image/CTY.png"
-            alt="Logo"
-            class="header-logo"
-            onerror="this.style.display = 'none'"
-          />
-          <span class="logo-text">SAIGON STEM</span>
+        <div class="sidebar-header">
+            <div class="logo-wrapper">
+                <img src="image/CTY.png" alt="Logo" class="header-logo" onerror="this.style.display='none'">
+                <span class="logo-text">SAIGON STEM</span>
+            </div>
+            <button class="btn-toggle-sidebar" id="toggleSidebarBtn" title="Thu gọn/Mở rộng">
+                <i class="fa-solid fa-bars-staggered"></i>
+            </button>
         </div>
-        <button
-          class="btn-toggle-sidebar"
-          id="toggleSidebarBtn"
-          title="Thu gọn/Mở rộng"
-        >
-          <i class="fa-solid fa-bars-staggered"></i>
-        </button>
-      </div>
 
-      <!-- THÔNG TIN GIÁO VIÊN -->
-      <div class="teacher-profile">
-        <img
-          src="image/Taikhoan.png"
-          alt="Avatar"
-          class="teacher-avatar"
-          onerror="
-            this.src =
-              'https://ui-avatars.com/api/?name=Giao+Vien&background=0284C7&color=fff'
-          "
-        />
-        <div class="teacher-info">
-          <h4 class="teacher-name">Nguyễn Trọng Mùa</h4>
-          <span class="teacher-role">Giáo viên STEM</span>
+        <div class="teacher-profile">
+            <img src="image/Taikhoan.png" alt="Avatar" class="teacher-avatar" onerror="this.src='https://ui-avatars.com/api/?name=Giao+Vien&background=0284C7&color=fff'">
+            <div class="teacher-info">
+                <h4 class="teacher-name">Nguyễn Trọng Mùa</h4>
+                <span class="teacher-role">Giáo viên STEM</span>
+            </div>
         </div>
-      </div>
 
-      <!-- MENU ĐIỀU HƯỚNG SANG CÁC FILE KHÁC NHAU -->
-      <nav class="sidebar-nav" id="sidebarNav">
-        <a href="index.html" class="nav-item">
-          <i class="fa-solid fa-house"></i>
-          <span class="nav-label">Trang chủ</span>
-        </a>
-        <a href="STEM.html" class="nav-item">
-          <i class="fa-solid fa-atom"></i>
-          <span class="nav-label">STEM</span>
-        </a>
-        <a href="kynangsong.html" class="nav-item">
-          <i class="fa-solid fa-heart-pulse"></i>
-          <span class="nav-label">Kỹ năng sống</span>
-        </a>
-        <a href="congdanso.html" class="nav-item">
-          <i class="fa-solid fa-globe"></i>
-          <span class="nav-label">Công dân số</span>
-        </a>
-        <a href="robotics.html" class="nav-item">
-          <i class="fa-solid fa-robot"></i>
-          <span class="nav-label">Robotics</span>
-        </a>
-        <a href="khuvuc2.html" class="nav-item">
-          <i class="fa-solid fa-map-location-dot"></i>
-          <span class="nav-label">Khu vực 2</span>
-        </a>
-      </nav>
+        <nav class="sidebar-nav" id="sidebarNav">
+            <a href="index.html" class="nav-item">
+                <i class="fa-solid fa-house"></i>
+                <span class="nav-label">Trang chủ</span>
+            </a>
+            <a href="stem.html" class="nav-item">
+                <i class="fa-solid fa-atom"></i>
+                <span class="nav-label">STEM</span>
+            </a>
+            <a href="kynangsong.html" class="nav-item">
+                <i class="fa-solid fa-heart-pulse"></i>
+                <span class="nav-label">Kỹ năng sống</span>
+            </a>
+            <a href="congdanso.html" class="nav-item">
+                <i class="fa-solid fa-globe"></i>
+                <span class="nav-label">Công dân số</span>
+            </a>
+            <a href="robotics.html" class="nav-item">
+                <i class="fa-solid fa-robot"></i>
+                <span class="nav-label">Robotics</span>
+            </a>
+            <a href="khuvuc2.html" class="nav-item">
+                <i class="fa-solid fa-map-location-dot"></i>
+                <span class="nav-label">Khu vực 2</span>
+            </a>
+        </nav>
 
-      <!-- FOOTER SIDEBAR: CÀI ĐẶT & DARK MODE -->
-      <div class="sidebar-footer">
-        <button class="btn-theme-toggle" id="themeToggleBtn">
-          <i class="fa-solid fa-moon"></i>
-          <span class="nav-label">Giao diện tối</span>
-        </button>
-        <a href="#" class="nav-item">
-          <i class="fa-solid fa-gear"></i>
-          <span class="nav-label">Cài đặt</span>
-        </a>
-      </div>
+        <div class="sidebar-footer">
+            <button class="btn-theme-toggle" id="themeToggleBtn">
+                <i class="fa-solid fa-moon"></i>
+                <span class="nav-label">Giao diện tối</span>
+            </button>
+            <a href="#" class="nav-item">
+                <i class="fa-solid fa-gear"></i>
+                <span class="nav-label">Cài đặt</span>
+            </a>
+        </div>
     </aside>
 
-    <!-- ==================== KHU VỰC CHÍNH (MAIN CONTENT) ==================== -->
     <main class="main-container">
-      <!-- TOPBAR: SEARCH & ACTIONS -->
-      <header class="topbar">
-        <div class="search-box">
-          <i class="fa-solid fa-magnifying-glass search-icon"></i>
-          <input
-            type="text"
-            id="searchInput"
-            class="search-input"
-            placeholder="Tìm kiếm bài học, chủ đề, khối lớp..."
-          />
-        </div>
+        
+        <header class="topbar">
+            <div class="search-box">
+                <i class="fa-solid fa-magnifying-glass search-icon"></i>
+                <input type="text" id="searchInput" class="search-input" placeholder="Tìm kiếm bài học, chủ đề, khối lớp...">
+            </div>
 
-        <div class="topbar-actions">
-          <!-- BỘ LỌC KHỐI LỚP -->
-          <select id="gradeFilter" class="custom-select">
-            <option value="all">Tất cả khối lớp</option>
-            <option value="1">Khối Lớp 1</option>
-            <option value="2">Khối Lớp 2</option>
-            <option value="3">Khối Lớp 3</option>
-            <option value="4">Khối Lớp 4</option>
-            <option value="5">Khối Lớp 5</option>
-          </select>
-        </div>
-      </header>
+            <div class="topbar-actions">
+                <select id="gradeFilter" class="custom-select">
+                    <option value="all">Tất cả khối lớp</option>
+                    <option value="1">Khối Lớp 1</option>
+                    <option value="2">Khối Lớp 2</option>
+                    <option value="3">Khối Lớp 3</option>
+                    <option value="4">Khối Lớp 4</option>
+                    <option value="5">Khối Lớp 5</option>
+                </select>
+            </div>
+        </header>
 
-      <!-- KHU VỰC LƯỚI BÀI HỌC DYNAMIC RENDER -->
-      <section class="content-area" style="padding-top: 24px">
-        <div class="section-header">
-          <h2 class="section-title" id="pageTitleText">Danh sách bài giảng</h2>
-          <span class="result-count" id="resultCount">Hiển thị 0 bài học</span>
-        </div>
+        <section class="content-area" style="padding-top: 24px;">
+            <div class="section-header">
+                <h2 class="section-title" id="pageTitleText">Danh sách bài giảng</h2>
+                <span class="result-count" id="resultCount">Hiển thị 0 bài học</span>
+            </div>
 
-        <!-- CONTAINER NƠI JAVASCRIPT TỰ ĐỘNG SINH CARD -->
-        <div class="lessons-grid" id="lessonsGrid">
-          <!-- Javascript sẽ render toàn bộ thẻ vào đây -->
-        </div>
-      </section>
+            <div class="lessons-grid" id="lessonsGrid">
+                </div>
+        </section>
+
     </main>
 
-    <!-- Liên kết JS -->
     <script src="script.js"></script>
-  </body>
+</body>
 </html>

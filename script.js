@@ -1,5 +1,4 @@
-// ==================== 1. CƠ SỞ DỮ LIỆU BÀI HỌC (DATA-DRIVEN) ====================
-// Muốn thêm bài học mới cho môn nào, chỉ cần thêm 1 object với đúng tên subject vào đây!
+// ==================== 1. CƠ SỞ DỮ LIỆU BÀI HỌC ĐẦY ĐỦ (DATA-DRIVEN) ====================
 const lessonsData = [
     // --- MÔN STEM ---
     { id: 1, subject: 'STEM', grade: 3, lesson: 2, title: 'Quạt máy mini', illu: '🪓', downloaded: false },
@@ -29,15 +28,47 @@ const lessonsData = [
 let currentGrade = 'all';
 let currentSearchText = '';
 
-// Nhận diện đang mở file HTML nào dựa trên đường dẫn URL trình duyệt
+// NHẬN DIỆN TRANG SIÊU LINH HOẠT (Bất chấp Vercel ẩn đuôi .html hay viết hoa/thường)
 function getCurrentPageCategory() {
     const path = window.location.pathname.toLowerCase();
-    if (path.includes('stem.html')) return 'STEM';
-    if (path.includes('kynangsong.html')) return 'Kỹ năng sống';
-    if (path.includes('congdanso.html')) return 'Công dân số';
-    if (path.includes('robotics.html')) return 'Robotics';
-    if (path.includes('khuvuc2.html')) return 'Chương trình khu vực 2';
-    return 'all'; // Ở index.html (Trang chủ) hiển thị tất cả
+    if (path.includes('stem')) return 'STEM';
+    if (path.includes('kynangsong')) return 'Kỹ năng sống';
+    if (path.includes('congdanso')) return 'Công dân số';
+    if (path.includes('robotics')) return 'Robotics';
+    if (path.includes('khuvuc2')) return 'Chương trình khu vực 2';
+    return 'all'; // Mặc định ở Trang chủ
+}
+
+// TỰ ĐỘNG BÔI SÁNG MENU BÊN TRÁI CHUẨN XÁC 100%
+function highlightActiveSidebar() {
+    const currentPage = getCurrentPageCategory();
+    const sidebarNav = document.getElementById('sidebarNav');
+    if (!sidebarNav) return;
+
+    const pageTitleText = document.getElementById('pageTitleText');
+    if (pageTitleText && currentPage !== 'all') {
+        pageTitleText.textContent = `Danh sách bài giảng ${currentPage}`;
+    }
+
+    // Kiểm tra từng nút menu và bật màu sáng cho nút khớp với trang hiện tại
+    sidebarNav.querySelectorAll('.nav-item').forEach(el => {
+        el.classList.remove('active');
+        const href = (el.getAttribute('href') || '').toLowerCase();
+        
+        if (currentPage === 'all' && (href.includes('index') || href === '/' || href === '#')) {
+            el.classList.add('active');
+        } else if (currentPage === 'STEM' && href.includes('stem')) {
+            el.classList.add('active');
+        } else if (currentPage === 'Kỹ năng sống' && href.includes('kynangsong')) {
+            el.classList.add('active');
+        } else if (currentPage === 'Công dân số' && href.includes('congdanso')) {
+            el.classList.add('active');
+        } else if (currentPage === 'Robotics' && href.includes('robotics')) {
+            el.classList.add('active');
+        } else if (currentPage === 'Chương trình khu vực 2' && href.includes('khuvuc2')) {
+            el.classList.add('active');
+        }
+    });
 }
 
 // ==================== 2. HÀM KHỞI TẠO HỆ THỐNG ====================
@@ -47,34 +78,7 @@ document.addEventListener('DOMContentLoaded', () => {
     renderLessons();
 });
 
-// Tự động bôi sáng (highlight) thẻ Sidebar tương ứng với file đang mở
-function highlightActiveSidebar() {
-    const currentPage = getCurrentPageCategory();
-    const sidebarNav = document.getElementById('sidebarNav');
-    if (!sidebarNav) return;
-
-    // Cập nhật tiêu đề trên trang
-    const pageTitleText = document.getElementById('pageTitleText');
-    if (pageTitleText && currentPage !== 'all') {
-        pageTitleText.textContent = `Danh sách bài giảng ${currentPage}`;
-    }
-
-    // Xóa active hiện tại và tìm đúng thẻ a chứa tên file để gán active
-    sidebarNav.querySelectorAll('.nav-item').forEach(el => el.classList.remove('active'));
-    
-    let targetFile = 'index.html';
-    if (currentPage === 'STEM') targetFile = 'stem.html';
-    else if (currentPage === 'Kỹ năng sống') targetFile = 'kynangsong.html';
-    else if (currentPage === 'Công dân số') targetFile = 'congdanso.html';
-    else if (currentPage === 'Robotics') targetFile = 'robotics.html';
-    else if (currentPage === 'Chương trình khu vực 2') targetFile = 'khuvuc2.html';
-
-    const targetLink = sidebarNav.querySelector(`a[href="${targetFile}"]`);
-    if (targetLink) targetLink.classList.add('active');
-}
-
 function initUI() {
-    // 1. Xử lý Sidebar Collapse
     const toggleSidebarBtn = document.getElementById('toggleSidebarBtn');
     const sidebar = document.getElementById('sidebar');
     if (toggleSidebarBtn && sidebar) {
@@ -83,7 +87,6 @@ function initUI() {
         });
     }
 
-    // 2. Xử lý Dark Mode
     const themeToggleBtn = document.getElementById('themeToggleBtn');
     if (themeToggleBtn) {
         themeToggleBtn.addEventListener('click', () => {
@@ -98,7 +101,6 @@ function initUI() {
         });
     }
 
-    // 3. Lọc theo Khối lớp
     const gradeFilter = document.getElementById('gradeFilter');
     if (gradeFilter) {
         gradeFilter.addEventListener('change', (e) => {
@@ -107,7 +109,6 @@ function initUI() {
         });
     }
 
-    // 4. Tìm kiếm Realtime
     const searchInput = document.getElementById('searchInput');
     if (searchInput) {
         searchInput.addEventListener('input', (e) => {
@@ -116,7 +117,6 @@ function initUI() {
         });
     }
 
-    // 5. Xử lý click Nút thao tác trên Card
     const lessonsGrid = document.getElementById('lessonsGrid');
     if (lessonsGrid) {
         lessonsGrid.addEventListener('click', (e) => {
@@ -137,7 +137,7 @@ function initUI() {
     }
 }
 
-// ==================== 3. RENDER BÀI HỌC THEO TRANG HIỆN TẠI ====================
+// ==================== 3. ENGINE RENDER BÀI HỌC ====================
 function renderLessons() {
     const grid = document.getElementById('lessonsGrid');
     if (!grid) return;
@@ -145,7 +145,6 @@ function renderLessons() {
     const pageCategory = getCurrentPageCategory();
 
     const filteredLessons = lessonsData.filter(item => {
-        // Nếu ở trang index.html thì hiển thị hết, nếu ở trang khác thì chỉ hiện đúng môn đó
         const matchCategory = (pageCategory === 'all') || (item.subject === pageCategory);
         const matchGrade = currentGrade === 'all' || item.grade.toString() === currentGrade;
         const matchSearch = item.title.toLowerCase().includes(currentSearchText) ||
@@ -168,7 +167,6 @@ function renderLessons() {
         return;
     }
 
-    // SINH GIAO DIỆN VỚI CÁC ICON ẢNH 3D SIÊU TO TRONG SUỐT
     grid.innerHTML = filteredLessons.map(item => `
         <article class="card-v2" data-id="${item.id}">
             <div class="card-banner">
@@ -179,12 +177,10 @@ function renderLessons() {
 
             <div class="card-footer">
                 ${!item.downloaded ? `
-                    <!-- Trạng thái 1: Chưa tải về (Dùng ảnh dow.png khổng lồ 75px) -->
                     <button class="btn-action-icon btn-download" data-id="${item.id}" data-action="download" title="Tải giáo án">
                         <img src="image/dow.png" alt="Tải về" class="btn-img-icon" />
                     </button>
                 ` : `
-                    <!-- Trạng thái 2: Đã tải về (Dùng ảnh start.png & Tailieu.png khổng lồ 75px) -->
                     <button class="btn-action-icon btn-ppt" data-id="${item.id}" data-action="ppt" title="Mở PPT">
                         <img src="image/start.png" alt="PPT" class="btn-img-icon" />
                     </button>
@@ -197,7 +193,6 @@ function renderLessons() {
     `).join('');
 }
 
-// ==================== 4. GIẢ LẬP TẢI BÀI HỌC VỀ MÁY ====================
 function simulateDownloadLesson(id, buttonEl) {
     buttonEl.innerHTML = `<i class="fa-solid fa-spinner fa-spin" style="font-size: 45px; color: #0284c7;"></i>`;
     buttonEl.style.pointerEvents = 'none';
