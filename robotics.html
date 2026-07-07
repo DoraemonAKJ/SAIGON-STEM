@@ -38,7 +38,7 @@
                 <i class="fa-solid fa-house"></i>
                 <span class="nav-label">Trang chủ</span>
             </a>
-            <a href="stem.html" class="nav-item">
+            <a href="STEM.html" class="nav-item">
                 <i class="fa-solid fa-atom"></i>
                 <span class="nav-label">STEM</span>
             </a>
@@ -81,6 +81,13 @@
             </div>
 
             <div class="topbar-actions">
+                <select id="statusFilter" class="custom-select">
+                    <option value="all">Tất cả trạng thái</option>
+                    <option value="ongoing">🟢 Đang diễn ra - Chủ đề 4</option>
+                    <option value="upcoming">🟡 Chưa diễn ra - Chủ đề 5</option>
+                    <option value="ended">🔴 Đã kết thúc - Chủ đề 3</option>
+                </select>
+
                 <select id="gradeFilter" class="custom-select">
                     <option value="all">Tất cả khối lớp</option>
                     <option value="1">Khối Lớp 1</option>
@@ -99,7 +106,7 @@
             </div>
 
             <div class="lessons-grid" id="lessonsGrid">
-                </div>
+            </div>
         </section>
 
     </main>
